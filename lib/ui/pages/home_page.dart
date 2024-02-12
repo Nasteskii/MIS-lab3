@@ -159,7 +159,7 @@ class _HomePageState extends State<HomePage> {
               ? const Text("Нема активни термини за полагање")
               : GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3),
+                      crossAxisCount: 2),
                   itemCount: context.watch<TermViewModel>().terms.length,
                   itemBuilder: (context, index) {
                     return Padding(
@@ -175,6 +175,7 @@ class _HomePageState extends State<HomePage> {
                                     .watch<TermViewModel>()
                                     .terms[index]
                                     .courseName,
+                                textAlign: TextAlign.center,
                                 style: const TextStyle(
                                     fontSize: 18, fontWeight: FontWeight.bold),
                               ),
@@ -182,6 +183,7 @@ class _HomePageState extends State<HomePage> {
                                 height: 10,
                               ),
                               Text(
+                                textAlign: TextAlign.center,
                                 DateFormat('dd/MM/yyyy HH:mm').format(context
                                     .watch<TermViewModel>()
                                     .terms[index]
