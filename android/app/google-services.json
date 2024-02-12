@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "256345629177",
+    "project_id": "raspored-47692",
+    "storage_bucket": "raspored-47692.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256345629177:android:67dda88c9aeb30cf119d28",
+        "android_client_info": {
+          "package_name": "com.example.raspored"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjfd0wwJZvsC1vf5bSWpqvHwQsTstESpM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
