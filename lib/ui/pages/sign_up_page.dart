@@ -65,8 +65,8 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Center(
+      body: Center(
+        child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Column(
@@ -77,7 +77,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
-                  height: 30,
+                  height: 20,
                 ),
                 FormContainerWidget(
                   controller: _usernameController,

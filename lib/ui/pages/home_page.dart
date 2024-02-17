@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:raspored/models/term.dart';
+import 'package:raspored/ui/pages/calendar_page.dart';
 import 'package:raspored/ui/widgets/date_time_picker_widget.dart';
 import 'package:raspored/view_models/term_view_model.dart';
 
@@ -56,7 +57,7 @@ class _HomePageState extends State<HomePage> {
             ? [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey,
+                    backgroundColor: Colors.blueGrey,
                   ),
                   onPressed: () => showDialog<String>(
                     context: context,
@@ -153,50 +154,76 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
       ),
-      body: Column(children: [
-        Expanded(
-          child: context.read<TermViewModel>().terms.isEmpty
-              ? const Text("Нема активни термини за полагање")
-              : GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2),
-                  itemCount: context.watch<TermViewModel>().terms.length,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Card(
-                        elevation: 3,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Column(
-                            children: [
-                              Text(
-                                context
-                                    .watch<TermViewModel>()
-                                    .terms[index]
-                                    .courseName,
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                textAlign: TextAlign.center,
-                                DateFormat('dd/MM/yyyy HH:mm').format(context
-                                    .watch<TermViewModel>()
-                                    .terms[index]
-                                    .dateTime),
-                              ),
-                            ],
+      body: Center(
+        child: Column(children: [
+          const SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.blueGrey,
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const CalendarPage();
+                  },
+                ),
+              );
+            },
+            child: const Text(
+              "Календар",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Expanded(
+            child: context.read<TermViewModel>().terms.isEmpty
+                ? const Text("Нема активни термини за полагање")
+                : GridView.builder(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2),
+                    itemCount: context.watch<TermViewModel>().terms.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Card(
+                          elevation: 3,
+                          child: Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: Column(
+                              children: [
+                                Text(
+                                  context
+                                      .watch<TermViewModel>()
+                                      .terms[index]
+                                      .courseName,
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  textAlign: TextAlign.center,
+                                  DateFormat('dd/MM/yyyy HH:mm').format(context
+                                      .watch<TermViewModel>()
+                                      .terms[index]
+                                      .dateTime),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  }),
-        ),
-      ]),
+                      );
+                    }),
+          ),
+        ]),
+      ),
     );
   }
 }

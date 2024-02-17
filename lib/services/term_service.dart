@@ -1,3 +1,4 @@
+import 'package:raspored/main.dart';
 import 'package:raspored/models/term.dart';
 
 class TermService {
@@ -10,6 +11,7 @@ class TermService {
   Future<void> addTerm(Term term) async {
     if (term.courseName != '') {
       _terms.add(term);
+      scheduleNotification(term);
     }
   }
 

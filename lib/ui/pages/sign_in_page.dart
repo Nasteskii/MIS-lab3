@@ -85,19 +85,18 @@ class _SignInPageState extends State<SignInPage> {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Center(
+      body: Center(
+        child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
                   "Најава",
                   style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
-                  height: 30,
+                  height: 20,
                 ),
                 FormContainerWidget(
                   controller: _emailController,
