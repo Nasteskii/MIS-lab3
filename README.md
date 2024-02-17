@@ -9,3 +9,5 @@ Laboratoriska vezba 3.
 ![image](https://github.com/Nasteskii/MIS-lab3/assets/86986540/4757f862-1364-424f-ad64-f3aab94b0824)
 ![image](https://github.com/Nasteskii/MIS-lab3/assets/86986540/bfe4364c-c915-4ff9-b9b2-89aa491d6f99)
 ![image](https://github.com/Nasteskii/MIS-lab3/assets/86986540/af3fab7b-87a1-4ed3-b55a-f607cd2eb0fc)
+![image](https://github.com/Nasteskii/MIS-lab3/assets/86986540/afaf3d5a-6cf4-4c20-89ac-be56edaec335)
+![image](https://github.com/Nasteskii/MIS-lab3/assets/86986540/1f282fea-93ea-49da-b718-97de235f0841)
