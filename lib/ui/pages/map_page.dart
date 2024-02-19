@@ -46,7 +46,7 @@ class _MapPageState extends State<MapPage> {
   void _getPolyPoints() async {
     PolylinePoints polylinePoints = PolylinePoints();
     PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
-        'API_VALUE',
+        'AIzaSyA9dYDx65ZhEJJTYDBU5nc0BJbe-LBIG9M',
         PointLatLng(_currentLocation!.latitude!, _currentLocation!.longitude!),
         PointLatLng(
             _markers.last.position.latitude, _markers.last.position.longitude));
@@ -82,13 +82,13 @@ class _MapPageState extends State<MapPage> {
     _getPolyPoints();
     if (_currentLocation != null) {
       _markers.add(Marker(
-          markerId: const MarkerId("currentLocation"),
-          position:
-              LatLng(_currentLocation!.latitude!, _currentLocation!.longitude!),
-          infoWindow: const InfoWindow(
-            title: "Your position",
-          ),
-          icon: BitmapDescriptor.defaultMarkerWithHue(50)));
+        markerId: const MarkerId("currentLocation"),
+        position:
+            LatLng(_currentLocation!.latitude!, _currentLocation!.longitude!),
+        infoWindow: const InfoWindow(
+          title: "Your position",
+        ),
+      ));
     }
     return Scaffold(
       appBar: AppBar(
@@ -101,6 +101,7 @@ class _MapPageState extends State<MapPage> {
       body: Expanded(
         child: GoogleMap(
           onMapCreated: _onMapCreated,
+          myLocationEnabled: true,
           initialCameraPosition: initialCameraPosition,
           markers: _markers,
           polylines: {
